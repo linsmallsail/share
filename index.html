@@ -7,8 +7,7 @@
   <title>Document</title>
 </head>
 <body>
-  <button id="share">点击分享</button>
-  <p>点击分享</p>
+  <button id="share">点击分享0</button>
   
   <!-- <script type="text/javascript" src="./dist/index.js"></script> -->
   <script type="module">
@@ -22,22 +21,23 @@
       icon: 'https://p2.ssl.qhimg.com/t01d072a1cbef3e4d5d.png',
       title: '分享标题',
     })
+
+    var shareParam = {
+      type: 8,
+      url: 'https://www.360.cn',
+      title: '分享标题',
+      caller: "h5_share_peas",
+      imgPath: 'https://p2.ssl.qhimg.com/t01d072a1cbef3e4d5d.png',
+    };
     function share() {
         try {
-          var shareParam = {
-            type: 8,
-            url: 'https://www.360.cn',
-            title: '分享标题',
-            caller: "h5_share_peas",
-            imgPath: 'https://p2.ssl.qhimg.com/t01d072a1cbef3e4d5d.png',
-          };
           console.log(
             "shareParams$WXFriend=" +
               btoa(encodeURIComponent(JSON.stringify(shareParam))) +
               "&onShareCallback"
           );
           // 唤起浏览器原生分享组件(如果在微信中不会唤起，此时call方法只会设置文案。类似setShareData)
-          nativeShare.call('wechatTimeline')
+          // nativeShare.call('wechatTimeline')
       } catch (err) {
         alert('main,err');
         // 分享失败，唤起微信app
