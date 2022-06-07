@@ -11,14 +11,14 @@
   
   <!-- <script type="text/javascript" src="./dist/index.js"></script> -->
   <script type="module">
-    import NativeShare from './dist/index.js'
+    // import NativeShare from './dist/index.js'
 
-    var nativeShare = new NativeShare()
-    nativeShare.setShareData({
-      link: 'https://www.360.cn',
-      icon: 'https://p2.ssl.qhimg.com/t01d072a1cbef3e4d5d.png',
-      title: '分享标题',
-    })
+    // var nativeShare = new NativeShare()
+    // nativeShare.setShareData({
+    //   link: 'https://www.360.cn',
+    //   icon: 'https://p2.ssl.qhimg.com/t01d072a1cbef3e4d5d.png',
+    //   title: '分享标题',
+    // })
     var shareParam = {
       type: 8,
       url: 'https://www.360.cn',
@@ -34,7 +34,7 @@
             "&onShareCallback"
         );
         // 唤起浏览器原生分享组件(如果在微信中不会唤起，此时call方法只会设置文案。类似setShareData)
-        nativeShare.call('wechatTimeline')
+        // nativeShare.call('wechatTimeline')
       } catch (err) {
         alert('main,err');
         // 分享失败，唤起微信app
